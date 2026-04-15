@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shukr6 Technoholic</title>
+  <meta name="description" content="Shukr6 Technoholic - Games, XR solutions, and digital innovation." />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f7f6;
+      color: #0f172a;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .logo .six {
+      color: #2ecc71;
+    }
+
+    .logo .brand2 {
+      color: #af050a;
+    }
+
+    nav {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #af050a;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .hero {
+      padding: 100px 0 90px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(253, 184, 1, 0.5);
+      background: rgba(253, 184, 1, 0.12);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: 56px;
+      line-height: 1.1;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #475569;
+      max-width: 640px;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 16px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: transform 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: #af050a;
+      color: #ffffff;
+    }
+
+    .btn-secondary {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      color: #0f172a;
+    }
+
+    .hero-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 32px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .stat-box {
+      background: #f8fafc;
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    .stat-box small {
+      display: block;
+      font-size: 13px;
+      color: #64748b;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .stat-box strong {
+      font-size: 18px;
+    }
+
+    .section-light {
+      background: #ffffff;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .section-title-label {
+      color: #af050a;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: 42px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .section-text {
+      max-width: 860px;
+      color: #475569;
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.04);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+
+    .card p {
+      color: #475569;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .career-grid,
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .soft-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 32px;
+      padding: 30px;
+    }
+
+    .interest-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .interest-item {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 14px 16px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .contact-info div {
+      margin-bottom: 22px;
+    }
+
+    .contact-info small {
+      display: block;
+      color: #64748b;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .contact-info a {
+      color: #af050a;
+      font-weight: 700;
+    }
+
+    .privacy-text p {
+      color: #475569;
+      font-size: 16px;
+      line-height: 1.9;
+      margin-bottom: 16px;
+      max-width: 900px;
+    }
+
+    footer {
+      background: #111827;
+      color: #cbd5e1;
+      border-top: 1px solid #1f2937;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 28px 0;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a:hover {
+      color: #ffffff;
+    }
+
+    @media (max-width: 992px) {
+      .hero-grid,
+      .cards,
+      .career-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+
+      h2 {
+        font-size: 34px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        gap: 14px;
+      }
+
+      .stats-grid,
+      .interest-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 64px 0;
+      }
+
+      .hero {
+        padding: 80px 0 64px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+
+      .hero p,
+      .section-text,
+      .privacy-text p {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container navbar">
+      <a href="#home" class="logo">Shukr<span class="six">6</span> <span class="brand2">Technoholic</span></a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#career">Career</a>
+        <a href="#contact">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+	<a href="terms.html">Terms & Conditions</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="badge">Games • XR • Digital Innovation</div>
+          <h1>Building smart digital experiences for play, learning, and growth.</h1>
+          <p>
+            Shukr6 Technoholic is a modern digital company focused on game development,
+            immersive XR solutions, and practical software innovation for businesses and users.
+          </p>
+          <div class="button-row">
+            <a href="#services" class="btn btn-primary">Explore Services</a>
+            <a href="#contact" class="btn btn-secondary">Contact Us</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="stats-grid">
+            <div class="stat-box">
+              <small>Focus</small>
+              <strong>Games & XR</strong>
+            </div>
+            <div class="stat-box">
+              <small>Approach</small>
+              <strong>Simple & Professional</strong>
+            </div>
+            <div class="stat-box">
+              <small>Strength</small>
+              <strong>Scalable Solutions</strong>
+            </div>
+            <div class="stat-box">
+              <small>Goal</small>
+              <strong>Quality Output</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section-light">
+      <div class="container">
+        <div class="section-title-label">About</div>
+        <h2>A company focused on practical digital creation.</h2>
+        <p class="section-text">
+          Shukr6 Technoholic is dedicated to creating interactive digital products that combine creativity,
+          usability, and technology. Our work spans game development, immersive experiences, and modern digital
+          solutions designed to support learning, engagement, training, and business growth.
+        </p>
+        <p class="section-text" style="margin-top: 14px;">
+          We believe in building lean, effective, and professional products with a clear focus on value,
+          innovation, and long-term scalability.
+        </p>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-title-label">Services</div>
+        <h2>What we offer</h2>
+        <p class="section-text">
+          Our services are designed to help clients and products move from concept to polished digital experience.
+        </p>
+
+        <div class="cards">
+          <div class="card">
+            <h3>Game Development</h3>
+            <p>
+              We create engaging casual, mobile, and interactive games with a focus on clean gameplay,
+              polished user experience, and scalable production.
+            </p>
+          </div>
+          <div class="card">
+            <h3>XR Solutions</h3>
+            <p>
+              We build immersive AR, VR, and mixed reality experiences for training, product showcases,
+              simulations, and interactive storytelling.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Software Prototyping</h3>
+            <p>
+              We help transform ideas into working digital prototypes quickly, allowing businesses and founders
+              to validate concepts with confidence.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="career" class="section-light" style="border-bottom: 1px solid #e2e8f0;">
+      <div class="container career-grid">
+        <div>
+          <div class="section-title-label">Career</div>
+          <h2>Grow with us</h2>
+          <p class="section-text">
+            We are always interested in connecting with motivated professionals who are passionate about games,
+            immersive technology, design, and digital innovation.
+          </p>
+          <p class="section-text" style="margin-top: 14px;">
+            If you would like to collaborate, freelance, or explore future opportunities with Shukr6 Technoholic,
+            feel free to reach out through our contact section.
+          </p>
+        </div>
+
+        <div class="soft-box">
+          <h3>Areas of Interest</h3>
+          <div class="interest-grid">
+            <div class="interest-item">Unity Developer</div>
+            <div class="interest-item">Game Designer</div>
+            <div class="interest-item">XR Developer</div>
+            <div class="interest-item">Business Development Partner</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact-grid">
+        <div>
+          <div class="section-title-label">Contact</div>
+          <h2>Let’s connect</h2>
+          <p class="section-text">
+            Whether you are looking for a development partner, an immersive solution, or a digital collaboration,
+            we would be glad to hear from you.
+          </p>
+        </div>
+
+        <div class="hero-card contact-info">
+          <div>
+            <small>Company</small>
+            <strong>Shukr6 Technoholic</strong>
+          </div>
+          <div>
+            <small>Email</small>
+            <a href="mailto:connect@shukr6.com">connect@shukr6.com</a>
+          </div>
+          <div>
+            <small>Website</small>
+            <strong>shukr6.com</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 Shukr6 Technoholic. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#career">Career</a>
+        <a href="#contact">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+	<a href="terms.html">Terms & Conditions</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
